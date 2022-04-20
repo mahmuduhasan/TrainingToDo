@@ -20,4 +20,7 @@ interface TodoDao {
 
     @Query("select * from tbl_todo")
     fun getAllTodo() : LiveData<List<Todo>>
+
+    @Query("select * from tbl_todo where user_id = :user_id")
+    fun getAllTodoByUser(user_id : Long) : LiveData<List<Todo>>
 }

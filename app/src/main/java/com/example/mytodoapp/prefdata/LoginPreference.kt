@@ -41,7 +41,7 @@ class LoginPreference(context : Context) {
     }
 
     //Write Process
-    suspend fun setLoginStatus(status : Boolean, id : Long, context: Context){
+    suspend fun setLoginStatus(status : Boolean, id : Long = 0, context: Context){
         context.dataStore.edit {
             it[isLoggedIn] = status
             it[userId] = id

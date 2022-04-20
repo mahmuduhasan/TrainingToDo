@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mytodoapp.databinding.TodoViewBinding
 import com.example.mytodoapp.entities.Todo
 
-class TodoAdapter : ListAdapter<Todo, TodoAdapter.TodoViewHolder>(TodoDiffUtil()) {
+class TodoAdapter(val completeCallback : (Todo, String) -> Unit) : ListAdapter<Todo, TodoAdapter.TodoViewHolder>(TodoDiffUtil()) {
     class TodoViewHolder(val binding: TodoViewBinding) : RecyclerView.ViewHolder(binding.root){
         fun todoBind(todo: Todo){
             binding.todo = todo
@@ -33,5 +33,11 @@ class TodoAdapter : ListAdapter<Todo, TodoAdapter.TodoViewHolder>(TodoDiffUtil()
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         val todo = getItem(position)
         holder.todoBind(todo)
+        holder.binding.doneCB.setOnClickListener {
+            completeCallback(todo, "Done")
+        }
+        holder.binding.delete.setOnClickListener {
+            completeCallback(todo, "Delete")
+        }
     }
 }

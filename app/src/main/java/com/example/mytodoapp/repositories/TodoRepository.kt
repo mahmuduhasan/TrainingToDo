@@ -20,4 +20,6 @@ class TodoRepository(val todoDao: TodoDao) {
     fun getTodo(id : Long) : LiveData<Todo> = todoDao.getTodo(id)
 
     fun getAllTodo() : LiveData<List<Todo>> = todoDao.getAllTodo()
+
+    fun getAllTodoByUser(user_id : Long) : LiveData<List<Todo>> = todoDao.getAllTodoByUser(user_id)
 }

@@ -38,4 +38,6 @@ class TodoModel(application: Application) : AndroidViewModel(application) {
     fun getTodo(id : Long) : LiveData<Todo> = repository.getTodo(id)
 
     fun getAllTodo() : LiveData<List<Todo>> = repository.getAllTodo()
+
+    fun getAllTodoByUser(user_id : Long) : LiveData<List<Todo>> = repository.getAllTodoByUser(user_id)
 }

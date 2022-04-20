@@ -11,23 +11,25 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="30dp"
-            android:background="@color/black"
-            android:layout_margin="8dp">
+            android:padding="10dp"
+            android:background="@color/black">
 
             <TextView
                 android:id="@+id/nameTodo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{todo.name}"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="4dp"
                 android:hint="TodoName"
-                android:textColorHint="@color/white"
+                android:text="@{todo.name}"
                 android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -36,13 +38,13 @@
                 android:id="@+id/dateTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="24dp"
-                android:textColor="@color/white"
-                android:text="@{todo.date+`-`+todo.time}"
-                android:textSize="20sp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="20dp"
                 android:hint="Date-Time"
+                android:text="@{todo.date+`-`+todo.time}"
+                android:textColor="@color/white"
                 android:textColorHint="@color/white"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameTodo" />
 
@@ -50,9 +52,31 @@
                 android:id="@+id/doneCB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="48dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.491" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:setPriorityImage="@{todo.priority}"/>
+
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/doneCB"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.493"
+                app:srcCompat="@drawable/ic_baseline_delete" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>
