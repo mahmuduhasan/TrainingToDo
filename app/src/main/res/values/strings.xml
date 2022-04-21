@@ -3,4 +3,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="logout">Logout</string>
+    <string name="completed">Completed</string>
+    <string name="incompleted">Incompleted</string>
+    <string name="low_todos">Low Todos</string>
+    <string name="high_todos">High Todos</string>
+    <string name="normal_todos">Normal Todos</string>
+    <string name="all_todos">All Todos</string>
 </resources>

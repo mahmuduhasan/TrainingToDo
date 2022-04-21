@@ -11,7 +11,6 @@ import kotlinx.coroutines.launch
 
 class TodoModel(application: Application) : AndroidViewModel(application) {
     private lateinit var repository: TodoRepository
-
     init {
         val dao = TodoAppDB.getDB(application).getTodoDao()
         repository = TodoRepository(dao)
@@ -40,4 +39,10 @@ class TodoModel(application: Application) : AndroidViewModel(application) {
     fun getAllTodo() : LiveData<List<Todo>> = repository.getAllTodo()
 
     fun getAllTodoByUser(user_id : Long) : LiveData<List<Todo>> = repository.getAllTodoByUser(user_id)
+
+    fun getAllTodoByCompleteCheck(user_id: Long, isDone : Boolean)
+            : LiveData<List<Todo>> = repository.getAllTodoByCompleteCheck(user_id,isDone)
+
+    fun getAllTodoByPriorityCheck(user_id: Long, priority : String)
+            : LiveData<List<Todo>> = repository.getAllTodoByPriorityCheck(user_id,priority)
 }

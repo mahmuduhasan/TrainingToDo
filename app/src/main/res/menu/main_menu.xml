@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/itemLogout" android:title="@string/logout"/>
+    <item
+        android:id="@+id/itemLogout"
+        android:title="@string/logout" />
+    <item
+        android:id="@+id/itemCompleted"
+        android:title="@string/completed"/>
+    <item
+        android:id="@+id/itemIncompleted"
+        android:title="@string/incompleted"/>
+    <item
+        android:id="@+id/itemLow"
+        android:title="@string/low_todos"/>
+    <item
+        android:id="@+id/itemNormal"
+        android:title="@string/normal_todos"/>
+    <item
+        android:id="@+id/itemHigh"
+        android:title="@string/high_todos"/>
+    <item
+        android:id="@+id/itemAll"
+        android:title="@string/all_todos"/>
 </menu>

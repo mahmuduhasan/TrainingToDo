@@ -1,5 +1,6 @@
 package com.example.mytodoapp.bindingAdapter
 
+import android.widget.CheckBox
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.example.mytodoapp.R
@@ -13,4 +14,13 @@ fun setPriorityImage(imageView: ImageView, priority : String){
         else -> R.drawable.ic_baseline_stars_low
     }
     imageView.setImageResource(image)
+}
+
+@BindingAdapter("app:setDone")
+fun setDone(checkBox: CheckBox, done: Boolean){
+    val isDone = when(done){
+        true -> true
+        false -> false
+    }
+    checkBox.isChecked = isDone
 }

@@ -22,4 +22,10 @@ class TodoRepository(val todoDao: TodoDao) {
     fun getAllTodo() : LiveData<List<Todo>> = todoDao.getAllTodo()
 
     fun getAllTodoByUser(user_id : Long) : LiveData<List<Todo>> = todoDao.getAllTodoByUser(user_id)
+
+    fun getAllTodoByCompleteCheck(user_id: Long, isDone : Boolean)
+                    : LiveData<List<Todo>> = todoDao.getAllTodoByCompleteCheck(user_id,isDone)
+
+    fun getAllTodoByPriorityCheck(user_id: Long, priority : String)
+                    : LiveData<List<Todo>> = todoDao.getAllTodoByPriorityCheck(user_id,priority)
 }
